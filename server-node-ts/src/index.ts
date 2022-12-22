@@ -1,21 +1,23 @@
-import express, { Request, Response, json, urlencoded } from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
+// ../src/index.ts
+import express, { Router, Request, Response, NextFunction } from 'express';
+// import router from './router/Auth';
 
-const app: express.Application = express();
-const port: number = 3000;
+import user from "./router/user";
+const app = express();
 
-app.use(cors());
+app.use(express.json());	// request body를 express에서 json으로 받아 온다.
 
-app.use(json());
-app.use(urlencoded({ extended: true }));
-  
-app.use(morgan('dev'));
+app.use('/user', user);
 
-app.get('/', (request: Request, response: Response) => {
-  response.send('Hello World');
+//
+// app.get('/', (req: Request, res: Response, next: NextFunction) => {
+//   res.send('Hi! This is my first express server. My name is Woojinss.');
+// });	// 문구 수정!!
+
+app.listen('8000', () => {
+  console.log(`
+    #############################################
+        🛡️ Server listening on port: 8000 🛡️
+    #############################################    
+    `)
 })
-
-app.listen(port, () => {
-  console.log(`App is listening on port ${port}! \n`);
-});
