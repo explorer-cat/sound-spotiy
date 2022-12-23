@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import './MenuItem.scss';
 
 const MenuButton = styled.a`
   &:hover{  
     color : #fff;
     transition:all 0.4s;
   }
-  color:#a7a7a7;
+  &:active{
+    transform:scale(0.97,0.97);
+  }
+  color: ${(props) => props.selected ? "#fff" : "#a7a7a7"};
   font-size:14px;
   font-weight:700;
   display: flex;
@@ -16,20 +20,21 @@ const MenuButton = styled.a`
   cursor: pointer;
 `
 
-const MenuIconImage = styled.img`
-  width:18px;
-  height:18px;
-`
 
-const MenuText = styled.span` 
-`
+/**
+ *
+ * @param img
+ * @param name
+ * @param selected
+ * @returns {JSX.Element}
+ * @constructor
+ */
 
-
-function MenuItem({img,name}) {
+function MenuItem({img,name,selected}) {
   return (
-    <MenuButton>
-      <MenuIconImage src={img}/>
-      <MenuText>{name}</MenuText>
+    <MenuButton className = "menu-item-btn" selected = {selected}>
+      <img src={img}/>
+      <span>{name}</span>
     </MenuButton>
   );
 }

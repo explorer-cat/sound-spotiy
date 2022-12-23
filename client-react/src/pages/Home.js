@@ -1,30 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import './Home.scss'
 import Sidebar from '../componets/menu/Sidebar';
 import Topbar from "../componets/menu/Topbar";
-
-
-const HomeDiv = styled.div`
-  display:flex;
-  width:100%;
-  height:100%;
-`
-
-const Content = styled.div`
-  display : flex;
-  width:100%;
-  height:100%;
-  background-color:blue;
-`
+import ContentLayout from "../layouts/ContentLayout";
 
 function Home() {
+  console.log('Home Component Render');
   return (
-    <HomeDiv>
-        <Sidebar />
-      <Content>
+    <div className = 'left-area'>
+      <Sidebar />
+      <div className = "right-area">
         <Topbar />
-      </Content>
-    </HomeDiv>
+        <ContentLayout />
+      </div>
+    </div>
   );
 }
 

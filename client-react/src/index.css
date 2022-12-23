@@ -45,6 +45,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
+  overflow: hidden;
   line-height: 1;
 }
 ol, ul {

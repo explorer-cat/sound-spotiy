@@ -1,32 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-
-
-const _Tobbar = styled.div`
-  display:flex;
-  width:100%;
-  height:70px;
-  background-color:green;
-`
-
-const NextPrevBtn = styled.div`
-
-`
-
-const UserBtn = styled.div`
-
-`
+import './Topbar.scss';
 
 function Topbar() {
   return (
-    <_Tobbar>
-      <NextPrevBtn>
-
-      </NextPrevBtn>
-      <UserBtn>
-
-      </UserBtn>
-    </_Tobbar>
+    <div className = 'top-bar-layout'>
+      <div class = "top-bar-left-menu">
+        <img src = {"assets/images/caret-left.png"}/>
+        <img src = {"assets/images/caret-right.png"}/>
+      </div>
+      <div className="top-bar-right-menu">
+          <span>가입하기</span>
+          <span>로그인하기</span>
+      </div>
+    </div>
   );
 }
 
