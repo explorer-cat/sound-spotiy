@@ -4,8 +4,6 @@
     display : block;
     max-width : 930px;
     min-width : 730px;
-    position: relative;
-    top: 45px;
     height:312px;
     padding:8px;
     backdrop-filter: blur(2px);
@@ -16,6 +14,7 @@
         background: #4c4863;
         padding: 36px;
         border-radius: 6px;
+        cursor: pointer;
     }
     .slick-slide > div {
         height:100% !important;

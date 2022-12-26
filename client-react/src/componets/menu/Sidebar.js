@@ -1,13 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuItem from "./MenuItem";
 import './Sidebar.scss'
+import {useParams, useLocation, NavLink} from 'react-router-dom';
 
 
 
-/*각 페이지 별로 메뉴 탭이 선택되도록 작업해야함.*/
+const Sidebar  = React.memo(function Sidebar({path}) {
+  const publicMenu = [
+    {img : 'assets/images/home.png', name : '홈', path : '/'},
+    {img : 'assets/images/search.png', name : '검색', path : '/search'},
+    {img : 'assets/images/book.png', name : '내 라이브러리', path : '/library'},
+  ]
+  const customMenu = [
+    {img : 'assets/images/album-circle-plus.png', name : '플레이리스트 만들기', path : '/createPlayList'},
+    {img : 'assets/images/heart.png', name : '좋아요를 표시한곡 ', path : '/likeList'},
+  ]
 
-function Sidebar() {
+
+
   return (
     <nav className = "sidebar">
       <div className = "side-container">
@@ -15,27 +25,32 @@ function Sidebar() {
           <img src = "assets/images/logo.png"/>
         </div>
         <ul>
-          <li>
-            <MenuItem img = {"assets/images/home.png"} name = "홈" selected = {true}/>
-          </li>
-          <li>
-            <MenuItem img = {"assets/images/search.png"} name = "검색하기"/>
-          </li>
-          <li>
-            <MenuItem img = {"assets/images/book.png"} name = "내 라이브러리"/>
-          </li>
+          {publicMenu.map((item,index) => {
+            return (
+              <li>
+                <NavLink  className={({ isActive }) => "menu-item-btn nav-link" + (isActive ? " activated" : "")}  key={index} to = {item.path}>
+                  <img src={item.img}/>
+                  <span>{item.name}</span>
+                </NavLink>
+             </li>
+            )
+          })}
         </ul>
         <ul>
-          <li>
-            <MenuItem img = {"assets/images/album-circle-plus.png"} name = "플레이 리스트 만들기"/>
-          </li>
-          <li>
-            <MenuItem img = {"assets/images/heart.png"} name = "좋아요를 표시한 곡"/>
-          </li>
+          {customMenu.map((item,index) => {
+            return (
+              <li>
+                <NavLink className={({ isActive }) => "menu-item-btn nav-link" + (isActive ? " activated" : "")} key={index} to = {item.path}>
+                  <img src={item.img}/>
+                  <span>{item.name}</span>
+                </NavLink>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </nav>
   );
-}
+})
 
 export default Sidebar;

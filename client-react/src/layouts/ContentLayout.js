@@ -1,20 +1,32 @@
 import React from 'react';
-import MainSlider from "../componets/contents/Slider";
-import Rank from "../componets/contents/Rank";
 import './ContentLayout.scss'
 
+import MainSlider from "../componets/contents/Slider";
+import Rank from "../componets/contents/Rank";
+import AlbumItem from "../componets/contents/AlbumItem";
+import Topbar from "../componets/menu/Topbar";
+import styled from 'styled-components';
 
-function ContentLayout() {
-  console.log('Home Component Render');
+
+const ContentSeticon = styled.section`
+  padding:40px;
+  margin-top:40px;
+`
+
+function ContentLayout({path}) {
+  console.log('ContentLayout Component Render');
   return (
       <div className = "content-layout">
-        <div className = "content-banner-layout">
-          <MainSlider/>
-          <Rank/>
-        </div>
-        <div className = "content-album-layout">
-          {/*<MainSlider/>*/}
-        </div>
+        <Topbar path = {path}/>
+        <ContentSeticon>
+          <div className = "content-banner-layout">
+            <MainSlider/>
+            <Rank/>
+          </div>
+          <div className = "content-album-layout">
+            <AlbumItem />
+          </div>
+        </ContentSeticon>
       </div>
 
   );

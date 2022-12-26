@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.albumCategoryTitle{
+    color:white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.album-item-layout {
+    background: #181818;
+    padding: 16px;
+    position: relative;
+    width: 172px;
+
+    .album-content-title{
+        display: block;
+        margin-top:24px;
+    }
+
+    .album-content-description{
+        display: block;
+        margin-top:8px;
+    }
+    img {
+        width:100%;
+        border-radius: 4px;
+    }
+}

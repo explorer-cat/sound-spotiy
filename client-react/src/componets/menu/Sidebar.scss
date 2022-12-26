@@ -21,6 +21,34 @@
         height:auto;
       }
     }
+
+    .activated{
+      color : #fff;
+    }
   }
 }
 
+
+.menu-item-btn {
+  &:hover{
+    color : #fff;
+    transition:all 0.4s;
+  }
+  &:active{
+    transform:scale(0.97,0.97);
+  }
+  text-decoration: none;
+  outline:none;
+  color: #a7a7a7;
+  font-size:14px;
+  font-weight:700;
+  display: flex;
+  gap: 16px;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+  img {
+    width:18px;
+    height:18px;
+  }
+}

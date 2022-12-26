@@ -3,10 +3,12 @@
 .top-bar-layout{
   display:flex;
   position: fixed;
+  box-sizing: border-box;
+  transition: background 1s ease;
   z-index: 100;
   justify-content: space-between;
   align-items: center;
-  width:calc(100% - 80px);
+  width: calc(100% - 380px);
   height:70px;
   padding: 0px 40px;
   //background-color:#121212;
