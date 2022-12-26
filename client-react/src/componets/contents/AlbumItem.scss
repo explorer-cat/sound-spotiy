@@ -11,6 +11,13 @@
     padding: 16px;
     position: relative;
     width: 172px;
+    cursor: pointer;
+    border-radius: 8px;
+    &:hover {
+        transition: all 0.3s;
+        background-color : #1F1F1F;
+        border-radius: 8px;
+    }
 
     .album-content-title{
         display: block;

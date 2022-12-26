@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.scss'
 import Sidebar from '../componets/menu/Sidebar';
-import ContentLayout from "../layouts/ContentLayout";
+import MainContentLayout from "../layouts/MainContentLayout";
 
 function Home({path}) {
   console.log(`Home Component Render, params : ${path}`);
@@ -10,7 +10,7 @@ function Home({path}) {
     <div className = 'left-area'>
       <Sidebar />
       <div className = "right-area">
-        <ContentLayout path = {path}/>
+        <MainContentLayout path = {path}/>
       </div>
     </div>
   );
