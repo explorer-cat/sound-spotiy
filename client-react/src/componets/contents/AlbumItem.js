@@ -7,18 +7,23 @@ const AlubmGrid = styled.div`
 `
 
 const GridContainer = styled.div`
-     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 21px;
     padding-top: 24px;
-    max-width: fit-content;
+    max-width: -webkit-fit-content;
 `
 
 const AlbumItemTitle = styled.span`
   color:white;
   font-weight:800;
-  font-size:18px;
+  font-size:16px;
   margin-top:12px;
+        width:20px;
+      // padding:0 5px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
 `
 
 const AlubmItemDescription = styled.span`
@@ -36,7 +41,10 @@ function AlbumItem({playList}) {
             {playList['item'].map((data) => {
               return(
                 <div className='album-item-layout'>
-                  <img src = {data.thumbnail}/>
+                  <img src = {data.thumbnail} />
+                  <div className = "play-content-btn">
+                    <img src = '/assets/images/play-btn.png' />
+                  </div>
                   <div className = "album-content-title">
                     <AlbumItemTitle >{data.title}</AlbumItemTitle>
                   </div>

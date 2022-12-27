@@ -8,7 +8,7 @@ import Topbar from "../componets/menu/Topbar";
 import styled from 'styled-components';
 
 
-const ContentSeticon = styled.section`
+const ContentSetion = styled.section`
   padding:40px;
   margin-top:40px;
 `
@@ -23,31 +23,43 @@ function MainContentLayout({path}) {
       'item' : [
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_1.png',
+          'title': '시영이의 코딩 플레이 리스트',
+          'description': 'Relax and indulge with beautiful piano pieces',
+        },
+        {
+          'playListId' : 10000,
+          'thumbnail': '/assets/images/playList/playList_thumbnail_2.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_3.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_4.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_5.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_6.png',
+          'title': 'Peaceful Piano',
+          'description': 'Relax and indulge with beautiful piano pieces',
+        },
+        {
+          'playListId' : 10000,
+          'thumbnail': '/assets/images/playList/playList_thumbnail_7.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
@@ -59,25 +71,25 @@ function MainContentLayout({path}) {
       'item' : [
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_2.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_2.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_2.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
         {
           'playListId' : 10000,
-          'thumbnail': '/assets/images/album-sample.png',
+          'thumbnail': '/assets/images/playList/playList_thumbnail_2.png',
           'title': 'Peaceful Piano',
           'description': 'Relax and indulge with beautiful piano pieces',
         },
@@ -85,21 +97,21 @@ function MainContentLayout({path}) {
     },
   ])
 
+
   return (
     <div className="content-layout">
       <Topbar path={path}/>
-      <ContentSeticon>
+      <ContentSetion>
         <div className="content-banner-layout">
-          <MainSlider/>
+          <MainSlider />
           <Rank/>
         </div>
         <div className="content-album-layout">
           {recommendedPlayList.map((item) => {
-            console.log('item',item)
             return (<AlbumItem playList={item}/>)
           })}
         </div>
-      </ContentSeticon>
+      </ContentSetion>
     </div>
 
   );
