@@ -3,14 +3,14 @@ import './Home.scss'
 import Sidebar from '../componets/menu/Sidebar';
 import MainContentLayout from "../layouts/MainContentLayout";
 
-function Home({path}) {
+function Home({path,userService}) {
   console.log(`Home Component Render, params : ${path}`);
 
   return (
     <div className = 'left-area'>
-      <Sidebar />
+      <Sidebar userService = {userService} />
       <div className = "right-area">
-        <MainContentLayout path = {path}/>
+        <MainContentLayout path = {path} userService = {userService} />
       </div>
     </div>
   );

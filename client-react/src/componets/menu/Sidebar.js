@@ -5,7 +5,7 @@ import {useParams, useLocation, NavLink} from 'react-router-dom';
 
 
 
-const Sidebar  = React.memo(function Sidebar({path}) {
+const Sidebar  = React.memo(function Sidebar({path,userService}) {
   const publicMenu = [
     {img : 'assets/images/home.png', name : '홈', path : '/'},
     {img : 'assets/images/search.png', name : '검색', path : '/search'},

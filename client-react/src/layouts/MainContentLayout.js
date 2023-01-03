@@ -14,7 +14,7 @@ const ContentSetion = styled.section`
 `
 
 /*메인 화면 컴포넌트 */
-function MainContentLayout({path}) {
+function MainContentLayout({path,userService}) {
   //메인화면 카테고리별 추천 플레이리스트
   const [recommendedPlayList, setRecommendedPlayList] = React.useState([
     {
@@ -100,7 +100,7 @@ function MainContentLayout({path}) {
 
   return (
     <div className="content-layout">
-      <Topbar path={path}/>
+      <Topbar path={path} userService = {userService}/>
       <ContentSetion>
         <div className="content-banner-layout">
           <MainSlider />

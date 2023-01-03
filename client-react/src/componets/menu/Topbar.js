@@ -1,24 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
 import './Topbar.scss';
-import {NavLink} from "react-router-dom";
+import {useParams, useLocation, NavLink} from 'react-router-dom';
+import styled from 'styled-components';
 
-function Topbar({path}) {
+const StyledLink = styled(NavLink)`
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+  color:white;
+  margin-right: 16px;
+  font-weight: 600;
+  font-size: 16px;
+`;
 
-  console.log(`TopBar() render , parameter : ${path}`)
-  return (
-    <div className = 'top-bar-layout'>
-      <div class = "top-bar-left-menu">
-        <img src = {"assets/images/caret-left.png"}/>
-        <img src = {"assets/images/caret-right.png"}/>
-      </div>
-      {path === '/search' ? <span>검색 위치가 들어갈 곳 입니다.</span> : null}
-      <div className="top-bar-right-menu">
-          <span>가입하기</span>
-          <span>로그인하기</span>
-      </div>
-    </div>
-  );
+
+function Topbar({path,userService}) {
+    const user = userService;
+
+    return (
+        <div className='top-bar-layout'>
+            <div class="top-bar-left-menu">
+                <img src={"assets/images/caret-left.png"}/>
+                <img src={"assets/images/caret-right.png"}/>
+            </div>
+            {path === '/search' ? <span>검색 위치가 들어갈 곳 입니다.</span> : null}
+            <div className="top-bar-right-menu">
+                <StyledLink to = "/signUp">가입하기</StyledLink>
+                <StyledLink to = "/signIn">로그인하기</StyledLink>
+            </div>
+        </div>
+    );
 }
 
 export default Topbar;
