@@ -20,10 +20,10 @@ function SignIn() {
                 <button id = "goLogin">로그인</button>
 
                 <div className ="socialLogin-container">
-                    <a id="btn-login-naver" className ="btn-login-naver" href="#">
+                    <a id="btn-login-naver" className ="btn-login-naver" href="src/componets/login#">
                         <img src="https://static.nid.naver.com/oauth/button_g.PNG?version=js-2.0.1" height="44"/>
                     </a>
-                    <a id="btn-login-kakao" href="#" className="btn-login-kakao">
+                    <a id="btn-login-kakao" href="src/componets/login#" className="btn-login-kakao">
                         {/*<span className="hidden">카카오 계정으로 로그인</span>*/}
                     </a>
                 </div>

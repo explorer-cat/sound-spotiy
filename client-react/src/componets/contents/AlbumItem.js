@@ -11,7 +11,7 @@ const GridContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 21px;
     padding-top: 24px;
-    max-width: -webkit-fit-content;
+    max-width: fit-content;
 `
 
 const AlbumItemTitle = styled.span`

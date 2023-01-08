@@ -14,7 +14,7 @@ const ContentSetion = styled.section`
 `
 
 /*메인 화면 컴포넌트 */
-function MainContentLayout({path,userService}) {
+function MainContentLayout({path,userService,RecommendationService}) {
   //메인화면 카테고리별 추천 플레이리스트
   const [recommendedPlayList, setRecommendedPlayList] = React.useState([
     {
@@ -104,7 +104,7 @@ function MainContentLayout({path,userService}) {
       <ContentSetion>
         <div className="content-banner-layout">
           <MainSlider />
-          <Rank/>
+          <Rank RecommendationService = {RecommendationService}/>
         </div>
         <div className="content-album-layout">
           {recommendedPlayList.map((item) => {

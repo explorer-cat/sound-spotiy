@@ -1,8 +1,8 @@
 import React from 'react';
-import './SignIn.scss'
+import './SignUpForm.scss'
 import LoginContentLayout from "../layouts/LoginContentLayout";
 
-function SignUp({path,userService}) {
+function SignUpForm({path,userService}) {
   console.log(`SignUp Component Render, params : ${path}`);
 
   return (
@@ -12,4 +12,4 @@ function SignUp({path,userService}) {
   );
 }
 
-export default SignUp;
+export default SignUpForm;

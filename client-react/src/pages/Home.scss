@@ -7,5 +7,11 @@
   .right-area {
     width: calc(100% - 384px);
     height: 100vh;
+    .content-banner-layout{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-right: 40px;
+    }
   }
 }
